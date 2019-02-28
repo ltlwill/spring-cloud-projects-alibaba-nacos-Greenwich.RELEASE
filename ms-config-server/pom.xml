@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.efe.ms</groupId>
+  <artifactId>ms-config-server</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>ms-config-server</name>
+  <url>http://maven.apache.org</url>
+
+  <parent>
+      <groupId>com.efe.ms</groupId>
+      <artifactId>ms-parent</artifactId>
+      <version>Greenwich.RELEASE</version>
+  </parent>
+
+  <dependencies> 
+      <!-- spring cloud 配置中心 -->
+      <dependency>
+	      <groupId>org.springframework.cloud</groupId>
+	      <artifactId>spring-cloud-config-server</artifactId>
+	  </dependency>
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-crypto</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-rsa</artifactId>
+      </dependency>
+      <!-- 配置服务中心支持SVN方式，需要这个依赖（注：其他方式，git、本地目录不需要） -->
+      <dependency>
+          <groupId>org.tmatesoft.svnkit</groupId>
+          <artifactId>svnkit</artifactId>
+      </dependency>
+  </dependencies>
+</project>

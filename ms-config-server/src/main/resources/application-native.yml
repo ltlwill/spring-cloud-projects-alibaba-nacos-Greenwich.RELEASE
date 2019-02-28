@@ -1,0 +1,16 @@
+# spring cloud微服务配置中心，本地目录方式，有3种方式：远程git仓库、远程SVN、本地方式（本地目录）
+spring:
+  profiles:
+    #  需要指定为native,开启本地存储配置的方式
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          # 配置文件在本地目录D:/spring_cloud_config下
+          searchLocations: file:D:/spring_cloud_config/
+
+  
+
+
+

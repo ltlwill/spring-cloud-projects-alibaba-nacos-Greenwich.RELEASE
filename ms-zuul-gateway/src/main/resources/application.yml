@@ -1,0 +1,47 @@
+# 服务器配置
+server:
+  port: 8731
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  # WTF: spring cloud Greenwich+spring boot 2.1.3配置了endpoint.show-details，会导致启动 失败, Failed to bind properties under 'management.endpoint.health.show-details' to org.springframework.boot.actuate.health.ShowDetails
+  # ,Property: management.endpoint.health.show-details,Value: always       
+  #endpoint:
+    #health: 
+      #show-details: always
+
+# spring配置
+spring:
+  # rabbitmq配置 （主要用于与sleuth、zipkin搭配实现链路跟踪，也可以配置到config配置中心）
+  rabbitmq:                   
+    host: 192.168.2.6         # 主机地址
+    port: 5672                # qmpq端口（默认5672）
+    username: ms_client_test  # 用户名
+    password: test1234        # 用户密码
+  # sleuth   
+  sleuth:
+    web:
+      enabled: true
+    sampler:
+      probability: 1.0
+
+# zuul路由配置(也可以代码实现)
+zuul:
+  host:
+    connect-timeout-millis: 15000  # 15秒超时
+    connection-request-timeout-millis: 15000
+    socket-timeout-millis: 15000
+  routes:
+    baidu-route: 
+      path: /baidu/**  
+      url: https://www.baidu.com/
+    hengzhiyi-route:
+      path: /hengzhiyi/**
+      url:  http://www.hengzhiyi.cn/
+    portal-route: 
+      path: /portal/**
+      url: http://192.168.2.109:9080/
+                 

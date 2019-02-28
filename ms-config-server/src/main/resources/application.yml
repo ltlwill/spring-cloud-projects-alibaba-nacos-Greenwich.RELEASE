@@ -1,0 +1,70 @@
+# spring cloud微服务配置中心，有两种方式：远程方式(通常使用git仓库)和本地方式（本地目录）
+# 关于配置内容的热加载：如果不重启应用，能够做到配置的刷新吗？答案显然是可以的。在远程配置中心（如git仓库）修改配置后，然后使用命令（本文使用的是curl，Linux和Windows都有curl工具，当然也可以借助其他工具，例如Postman等）
+# 命令如下：curl  -X POST http://localhost:8740/refresh  注：使用远程配置的应用需要加上@RefreshScope注解，才使刷新生效
+
+# 服务器配置
+server:
+  # 指定端口
+  port: 8720
+  
+#spring  配置
+spring:
+  application:
+    name: config-server
+  profiles:
+    # 使用subversion(svn)方式
+    #active: subversion,dev
+    include:
+      - subversion
+      - dev
+  
+  # rabbitmq配置  
+  rabbitmq:
+    # rabbitmq主机地址
+    host: 192.168.2.6
+    # rabbitmq qmpq端口（默认5672）
+    port: 5672
+    # rabbitmq用户名
+    username: ms_client_test
+    # rabbitmq 用户密码
+    password: test1234
+  cloud:
+    bus:
+      trace: 
+        # 开启消息跟踪
+        enable: true
+# Spring boot 2.0的改动较大，/bus/refresh全部整合到actuator里面了，变成了/actuator/bus-refresh,所以之前1.x的management.security.enabled全部失效，不适用于2.0 
+management: 
+  endpoints:
+    web:
+      exposure:
+        #include: bus-refresh
+        include: "*"
+  # WTF: spring cloud Greenwich+spring boot 2.1.3配置了endpoint.show-details，会导致启动 失败, Failed to bind properties under 'management.endpoint.health.show-details' to org.springframework.boot.actuate.health.ShowDetails
+  # ,Property: management.endpoint.health.show-details,Value: always
+  #endpoint:
+    #health:
+      #show-details: always
+
+# 注册到eureka服务注册中心  
+eureka:
+  instance:
+    prefer-ip-address: true
+    # 在springcloud中服务的 Instance ID 默认值是:${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}},也就是：主机名：应用名：应用端口
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+    #metadata-map: # 如果配置了用户密码
+      #user.name: ${spring.security.user.name}
+      #user.password: ${spring.security.user.password}
+  client:
+    serviceUrl:
+      # 注册到单服务中心
+      defaultZone: http://eureka_admin:eureka_admin_123@localhost:8710/eureka/
+      # 将配置中心服务注册到高可用的eureka服务注册中心（集群）
+      # 无需要认证版
+      # defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/ 
+      # 需认证版（规则：http://user:password@host:port/eureka/）
+      # defaultZone: http://eureka_admin:eureka_admin_123@peer1:8761/eureka/,http://eureka_admin:eureka_admin_123@peer2:8762/eureka/,http://eureka_admin:eureka_admin_123@peer3:8763/eureka/    
+
+
+

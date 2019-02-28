@@ -1,0 +1,7 @@
+# 加解密密匙配置(非对称加解密) ,使用jdk中自带的keytool工具,命令行如：keytool -genkeypair -alias ms-config-server -keyalg RSA -keystore ms-config-server.keystore
+encrypt: 
+  key-store:
+    location: classpath:/keystore/ms-config-server.jks
+    alias: ms-config-server
+    secret: config_server_999
+    password: config_server_999

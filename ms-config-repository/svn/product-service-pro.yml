@@ -1,0 +1,15 @@
+spring: 
+  # 数据源
+  datasource:                 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.2.252:3306/db_ebay?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    username: db_ebay_slave
+    password: '{cipher}AQBRdD67ydeayQdN5S69ai9PzQd7syp+1Gqgeomwqc3SO2heje+P44loLBAblp4zpNVuxPJ1203ZHUcALWMuUUAQB++auGcgmovlKoBK43qmqCiF8MvmcTCbpTYV1sJblrP12k3wuaQtyIba96zPj+hYMEpwq1iX/8mwO+khdtbWxA+8t3uXghhAPkmZ2auBGf4GdtI0Ce6hO24RANBNVNkHuEimEPNkt7aMRKkE4A7lFQCfZMtyW4TeLSiKla06LaAZ0jddZrLk0LRuSI6GR9LILC+dCgbIyYJuLehr6pm3SfQKoocP8VTOK32U63HlmiuzU34neLK8537boYBIgP08fUn6e/eRnWsh2j9z0aj49D+k6U8AiEr/7SV3YFAl8qU='
+  # rabbitmq配置
+  rabbitmq:                   
+    host: 192.168.2.108         # 主机地址
+    port: 5672                  # qmpq端口（默认5672）
+    username: ms_client_pro     # 用户名
+    password: pro!!1234         # 用户密码
+customProps:
+  remark: product-service-pro	

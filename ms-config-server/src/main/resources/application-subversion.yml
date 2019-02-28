@@ -1,0 +1,17 @@
+# spring cloud微服务配置中心，SVN方式（注：需要依赖org.tmatesoft.svnkit:svnkit），有3种方式：远程git仓库、远程SVN、本地方式（本地目录）
+spring:
+  profiles:
+    # 与git的区别，需要指定为 subversion，开启SVN方式
+    active: subversion
+  cloud:
+    config:
+      server:
+        svn:
+          # 配置SVN仓库地址  https://192.168.2.6/svn/projects/config-repo2
+          uri: https://192.168.2.6/svn/projects/ms-config-repo2/svn
+          force-pull: true
+          # 访问SVN仓库的用户名
+          username: test
+          # 访问SVN仓库的用户密码
+          password: 1234
+        default-label: 

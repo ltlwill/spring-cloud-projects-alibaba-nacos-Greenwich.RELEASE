@@ -1,0 +1,19 @@
+# spring cloud微服务配置中心，Git方式，有3种方式：远程git仓库、远程SVN、本地方式（本地目录）
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          # 配置git仓库地址
+          uri: https://github.com/ltlwill/springcloud-study/
+          # 配置仓库路径下的相对搜索位置，可以配置多个，用,号分割
+          searchPaths: config-repo
+          # git仓库的用户名 
+          username: your_git_account
+          # git仓库的用户密码
+          password: your_git_password
+
+  
+
+
+

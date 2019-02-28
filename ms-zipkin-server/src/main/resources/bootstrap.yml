@@ -1,0 +1,47 @@
+# bootstrap.yml文件中的内容不能放到application.yml中，否则config部分无法被加载，因为config部分的配置先于application.yml被加载，而bootstrap.yml中的配置会先于application.yml加载
+spring:
+  application:
+    # 对应 ms-config-server中所获取的远程配置文件的{application}
+    name: zipkin-server
+  profiles: 
+    active: dev
+      
+  # 使用配置服务中心的配置信息（使用配置中心与eureka服务注册中心联合使用（将配置服务注册到eureka服务注册中心，用服务发现的方式）方式，推荐这种方式）
+  cloud:
+    config:
+      # name: ms-web-config
+      profile: ${spring.profiles.active}
+      # 注：如果配置中心使用的是SVN或本地目录时，不要配置label，否则读取不到配置中心配置的属性
+      label:
+      # 注：如果配置中心使用GIT则需要配置label
+      # label: master
+      fail-fast: true # 在某些情况下，如果服务无法连接到配置服务器，则可能希望启动服务失败,客户端将以异常停止
+      retry:
+        max-attempts: 5 # 配置客户端重试,首先，您需要设置spring.cloud.config.failFast=true，然后您需要将spring-retry和spring-boot-starter-aop添加到您的类路径中。默认行为是重试6次，初始退避间隔为1000ms，指数乘数为1.1
+      discovery:
+        # 默认false，设为true表示使用注册中心中的配置服务（eureka服务发现）而不自己指定配置服务的地址（即uri）
+        enabled: true
+        # 指向配置中心在eureka注册的服务名称（即：spring.application.name）
+        serviceId: config-server
+        
+# eureka服务配置
+eureka:
+  instance:
+    # 在springcloud中服务的 Instance ID 默认值是:${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}},也就是：主机名：应用名：应用端口
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    serviceUrl:
+      # 注册到单服务中心
+      defaultZone: http://eureka_admin:eureka_admin_123@localhost:8761/eureka/
+      # 注册到高可用的服务中心（集群）
+      # 无认证
+      # defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
+      # 需认证版（规则：http://user:password@host:port/eureka/）
+      #defaultZone: http://eureka_admin:eureka_admin_123@peer1:8761/eureka/,http://eureka_admin:eureka_admin_123@peer2:8762/eureka/,http://eureka_admin:eureka_admin_123@peer3:8763/eureka/
+       
+
+

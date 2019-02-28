@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.efe.ms</groupId>
+  <artifactId>ms-zuul-gateway</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <name>ms-zuul-gateway</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+  </properties>
+  
+   <!-- parent pom -->
+  <parent>
+      <groupId>com.efe.ms</groupId>
+      <artifactId>ms-parent</artifactId>
+      <version>Greenwich.RELEASE</version>
+  </parent>
+
+  <dependencies>
+      <!-- zuul -->
+      <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+      </dependency>  
+      <!-- swagger --> 
+      <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger2</artifactId>
+          <version>${swagger.version}</version>
+      </dependency> 
+      <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-swagger-ui</artifactId>
+          <version>${swagger.version}</version>
+      </dependency>
+  </dependencies>
+</project>

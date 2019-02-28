@@ -1,0 +1,11 @@
+# 服务器配置
+server:
+  # 指定该Eureka实例的端口
+  port: 8770
+ 
+# 解决错误： Prometheus requires that all meters with the same name have the same set of  
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false  

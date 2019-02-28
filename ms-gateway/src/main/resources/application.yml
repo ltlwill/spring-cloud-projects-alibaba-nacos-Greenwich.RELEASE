@@ -1,0 +1,53 @@
+# 服务器配置
+server:
+  port: 8730
+  servlet:
+    context-path: /
+
+management: 
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  # WTF: spring cloud Greenwich+spring boot 2.1.3配置了endpoint.show-details，会导致启动 失败, Failed to bind properties under 'management.endpoint.health.show-details' to org.springframework.boot.actuate.health.ShowDetails
+  # ,Property: management.endpoint.health.show-details,Value: always        
+ # endpoint:
+    #health: 
+      #show-details: always
+
+# spring cloud gateway网关配置
+spring:
+  # rabbitmq配置 （主要用于与sleuth、zipkin搭配实现链路跟踪，也可以配置到config配置中心）
+  rabbitmq:                   
+    host: 192.168.2.6         # 主机地址
+    port: 5672                # qmpq端口（默认5672）
+    username: ms_client_test  # 用户名
+    password: test1234        # 用户密码
+  # sleuth   
+  sleuth:
+    web:
+      enabled: true
+    sampler:
+      probability: 1.0
+  
+  # spring cloud 配置(yml配置方式的路由实现，还可以有代码方式实现)
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 为true便开启通过服务中心的自动根据 serviceId 创建路由的功能
+          lower-case-service-id: true # 解决spring cloud gateway网关代理的服务名必须大写的问题
+      routes: 
+        - id: baidu-route
+          uri: https://www.baidu.com/
+          predicates: 
+            - Path= /baidu/** # 跳转到百度搜索页面
+        - id: hengzhiyi-route
+          uri: http://www.hengzhiyi.cn/
+          predicates:
+            - Path= /hengzhiyi/**
+        - id: portal-route
+          uri: http://192.168.2.109:9080/
+          predicates:
+            - Path= /portal/**  
+                 

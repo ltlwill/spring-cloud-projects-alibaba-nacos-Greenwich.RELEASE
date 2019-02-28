@@ -1,0 +1,7 @@
+spring: 
+  # rabbitmq配置
+  rabbitmq:                   
+    host: 192.168.2.108         # 主机地址
+    port: 5672                  # qmpq端口（默认5672）
+    username: ms_client_pro     # 用户名
+    password: pro!!1234         # 用户密码
