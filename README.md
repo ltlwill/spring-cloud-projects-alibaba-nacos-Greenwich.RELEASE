@@ -5,3 +5,4 @@
 # spring-cloud-projects-Greenwich.RELEASE
 Spring Cloud Greenwich.RELEASE 版本微服务项目
 
+注：需要安装rabbitmq、mysql数据库等才能完整运行起来
