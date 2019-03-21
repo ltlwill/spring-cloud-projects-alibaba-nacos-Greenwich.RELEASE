@@ -161,13 +161,23 @@
         </dependency>
     </dependencies>
     <repositories>
+        <!--
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
-            <!-- <url>https://repo.spring.io/milestone</url> -->
-            <url>http://192.168.2.6:9091/nexus/content/repositories/spring-milestones/</url> 
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
+            </snapshots>
+        </repository>-->
+        <repository>
+            <id>spring</id>
+            <url>https://maven.aliyun.com/repository/spring</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
