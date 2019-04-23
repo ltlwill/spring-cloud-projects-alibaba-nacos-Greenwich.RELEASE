@@ -176,13 +176,13 @@
     -->
 
     <!--开发环境:打印控制台-->
-    <springProfile name="dev">
+    <!-- <springProfile name="dev">
         <root level="DEBUG">
             <appender-ref ref="CONSOLE"/>
         </root>
-    </springProfile>
+    </springProfile> -->
     <!-- 生产环境:输出日志 -->
-    <springProfile name="pro">
+    <springProfile name="test">
         <root level="INFO">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="DEBUG_FILE" />
