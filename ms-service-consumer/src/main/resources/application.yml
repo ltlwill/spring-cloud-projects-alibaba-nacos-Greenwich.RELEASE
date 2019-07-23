@@ -18,3 +18,16 @@ spring:
           auto: none
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
+  # sleuth 配置    
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler: 
+      probability: 1.0 # 采样比例为: 0.1(即10%),设置的值介于0.0到1.0之间，1.0则表示全部采集。
+      # percentage: 1.0 # 采样比例为: 0.1(即10%),设置的值介于0.0到1.0之间，1.0则表示全部采集。spring boot2.0之前
+management: 
+  endpoints:
+    web:
+      exposure:
+        include: "*"  

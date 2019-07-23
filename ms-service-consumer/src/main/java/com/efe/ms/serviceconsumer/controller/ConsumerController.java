@@ -41,6 +41,11 @@ public class ConsumerController {
 		return appName;
 	}
 	
+	@GetMapping("/name")
+	public String index(){
+		return "this is service-consumer.";
+	}
+	
 	@ApiOperation(value="获取公共配置")
 	@GetMapping("/commonConfigValue")
 	public String getCommonConfigValue(){
