@@ -1,0 +1,9 @@
+spring:
+  # Êý¾Ý¿â
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.2.6:3306/db_ebay?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    username: db_ebay_dev
+    password: db_ebay_devpwd  
+customProps: 
+  remark: this is a custom property ^-^

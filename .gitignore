@@ -12,7 +12,8 @@ out
 .settings/
 .svn/
 target/
-
+alibaba nacos1.1.0/nacos/logs/
+alibaba nacos1.1.0/nacos/data/derby-data
  
 bin/
 gen/

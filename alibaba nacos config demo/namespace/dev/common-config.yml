@@ -1,0 +1,13 @@
+spring: 
+  # sleuth   
+  sleuth:
+    web:
+      enabled: true
+    sampler:
+      probability: 1.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"      
+commonConfig: this is a common config aa xx

@@ -32,7 +32,7 @@ public class ProductLineController extends BaseController {
 	@Autowired
 	private ProductLineService productLineService;
 	
-	@Value("${customProps.remark}")
+	@Value("${customProps.remark:}")
 	private String configRemark;
 	
 //	@Value("${commonConfig.testValue}")
@@ -53,6 +53,11 @@ public class ProductLineController extends BaseController {
 	@GetMapping("/getCommonConfig")
 	public String getCommonConfig(){
 		return commonConfigValue;
+	}
+	
+	@GetMapping("/test")
+	public String test(){
+		return "test11..";
 	}
 
 }

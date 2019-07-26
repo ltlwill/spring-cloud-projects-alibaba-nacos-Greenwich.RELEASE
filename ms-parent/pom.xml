@@ -24,6 +24,7 @@
         <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
+        <spring-cloud-starter-alibaba-nacos.version>0.9.0.RELEASE</spring-cloud-starter-alibaba-nacos.version>
         <maven-surefire-plugin.version>2.21.1</maven-surefire-plugin.version>
         <junit.version>4.12</junit.version>
         <swagger.version>2.9.2</swagger.version>
@@ -69,11 +70,30 @@
     </build>
 
     <dependencies>
+    
+    	<!-- euraka、spring cloud config 换成 alibaba nacos实现 -->
         <!-- eureka client(注册到eureka服务中心需要)-->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+        </dependency> -->
+        <!-- spring cloud config -->
+        <!-- <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency> -->
+        
+        <!-- alibaba nacos -->
+        <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+		    <version>${spring-cloud-starter-alibaba-nacos.version}</version>   
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+		    <version>${spring-cloud-starter-alibaba-nacos.version}</version>  
+		</dependency>
         
         <!-- Feign，使用feign时不需要再次依赖ribbon、hystrix了，默认已经依赖了，feign是一个声明式的Web Service客户端，它使得编写Web Serivce客户端变得更加简单，整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现 -->
         <dependency>
@@ -87,11 +107,6 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
     
-        <!-- spring cloud config -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
         
         <!-- WTF：这个版本要依赖 spring-boot-starter-web才能有tomcat-embed-core,tomcat-embed-websokect的jar包，Finchely版本不需要，会从 spring-boot-starter-actuator依赖过来-->
         <dependency>

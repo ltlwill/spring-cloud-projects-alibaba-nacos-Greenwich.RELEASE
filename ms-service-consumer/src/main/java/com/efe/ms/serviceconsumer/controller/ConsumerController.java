@@ -24,13 +24,13 @@ import com.efe.ms.serviceconsumer.vo.Pagination;
 @RequestMapping("/consumer")
 public class ConsumerController {
 	
-	@Value("${spring.application.name}")
+	@Value("${spring.application.name:}")
 	private String appName;
 	
-	@Value("${commonConfig}")
+	@Value("${commonConfig:}")
 	private String commonConfigValue;
 	
-	@Value("${configValue}")
+	@Value("${configValue:}")
 	private String configValue;
 	
 	@Autowired

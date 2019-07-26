@@ -1,23 +1,17 @@
 server:
   port: 8770
 spring: 
-  # rabbitmq配置
-  rabbitmq:                   
-    host: 192.168.2.6         # 主机地址
-    port: 5672                # qmpq端口（默认5672）
-    username: ms_client_test  # 用户名
-    password: test1234        # 用户密码  
-  jpa:
-    hibernate:
-      naming:
+  #jpa:
+    #hibernate:
+      #naming:
         # 解决列名都配置正确，但是还是出现SQL Error: 1054, SQLState: 42S22 Unknown column in 'field list' error的问题
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl 
-    properties:
-      hibernate:
-        hbm2ddl:
-          auto: none
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    show-sql: true
+        #physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl 
+    #properties:
+      #hibernate:
+        #hbm2ddl:
+          #auto: none
+        #dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    #show-sql: true
   # sleuth 配置    
   sleuth:
     web:

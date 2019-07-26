@@ -1,50 +1,36 @@
+# nacos 固定值配置
+nacos-server-address: 127.0.0.1:8848
+nacos-namespace-dev: 327695a5-9f75-405d-99bf-e46b51f6be0f
+nacos-namespace-test: c741ea3c-c048-47a4-a395-3d967d9b51ed
+nacos-namespace-pro: 4fdf5ea7-a937-4ffd-9550-25835f0814a0
+
 # spring 配置相关
 spring:
   application:
     name: service-consumer
   profiles:
     active: dev  
-  # 使用配置服务中心的配置信息（使用配置中心与eureka服务注册中心联合使用（将配置服务注册到eureka服务注册中心，用服务发现的方式）方式，推荐这种方式）
-  cloud:
-    config:
-      # name: ms-web-config
-      profile: ${spring.profiles.active}
-      # 注：如果配置中心使用的是SVN或本地目录时，不要配置label，否则读取不到配置中心配置的属性
-      label:
-      # 注：如果配置中心使用GIT则需要配置label
-      # label: master
-      fail-fast: true # 在某些情况下，如果服务无法连接到配置服务器，则可能希望启动服务失败,客户端将以异常停止
-      retry:
-        max-attempts: 5 # 配置客户端重试,首先，您需要设置spring.cloud.config.failFast=true，然后您需要将spring-retry和spring-boot-starter-aop添加到您的类路径中。默认行为是重试6次，初始退避间隔为1000ms，指数乘数为1.1
-      discovery:
-        # 默认false，设为true表示使用注册中心中的配置服务（eureka服务发现）而不自己指定配置服务的地址（即uri）
-        enabled: true
-        # 指向配置中心在eureka注册的服务名称（即：spring.application.name）
-        serviceId: config-server
-
-# eureka服务注册
-eureka:
-  instance:
-    prefer-ip-address: true
-    # 在springcloud中服务的 Instance ID 默认值是:${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}},也就是：主机名：应用名：应用端口
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    hostname: ${spring.cloud.client.ip-address}        
-    #metadata-map:
-      #user.name: user
-      #user.password: pwd
-  client:
-    # 不能写成 service-url和 default-zone,否则注册不到eureka且启动不了
-    serviceUrl:
-      # 注册到eureka单服务中心
-      defaultZone: http://eureka_admin:eureka_admin_123@localhost:8710/eureka/    
-      # 注册到高可用的服务中心（集群）
-      # 无认证
-      # defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
-      # 需认证版（规则：http://user:password@host:port/eureka/）
-      #defaultZone: http://eureka_admin:eureka_admin_123@peer1:8761/eureka/,http://eureka_admin:eureka_admin_123@peer2:8762/eureka/,http://eureka_admin:eureka_admin_123@peer3:8763/eureka/
-  
-   
-   
+  # alibaba nacos
+  cloud: 
+    nacos: 
+      discovery: 
+        server-addr: ${nacos-server-address}
+        namespace: ${nacos-namespace-${spring.profiles.active}}
+      config: 
+        server-addr: ${nacos-server-address}
+        file-extension: yml
+        namespace: ${nacos-namespace-${spring.profiles.active}}
+        # 共享配置 方式一
+        shared-dataids: common-config.yml,rabbitmq-config.yml
+        refreshable-dataids: common-config.yml,rabbitmq-config.yml
+        # 共享配置 方式二
+        ext-config:
+          - data-id: common-config.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: rabbitmq-config.yml
+            group: DEFAULT_GROUP
+            refresh: true 
    
    
    

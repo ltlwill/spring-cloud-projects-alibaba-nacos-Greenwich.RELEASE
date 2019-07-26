@@ -5,43 +5,4 @@ server:
   servlet:
     context-path: /
 
-spring:
-  application:
-    name: admin-server
-  security:
-    user:
-      name: admin
-      password: admin@1234
-      
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  # WTF: spring cloud Greenwich+spring boot 2.1.3配置了endpoint.show-details，会导致启动 失败, Failed to bind properties under 'management.endpoint.health.show-details' to org.springframework.boot.actuate.health.ShowDetails
-  # ,Property: management.endpoint.health.show-details,Value: always      
- # endpoint:
-    #health: 
-      #show-details: always
-      
-# eureka服务配置
-eureka:
-  instance:
-    # 在springcloud中服务的 Instance ID 默认值是:${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}},也就是：主机名：应用名：应用端口
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-    hostname: ${spring.cloud.client.ip-address}
-    metadata-map:
-      user.name: ${spring.security.user.name}
-      user.password: ${spring.security.user.password}
-  client:
-    serviceUrl:
-      # 注册到单服务中心
-      defaultZone: http://eureka_admin:eureka_admin_123@localhost:8710/eureka/
-      # 注册到高可用的服务中心（集群）
-      # 无认证
-      # defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/,http://peer3:8763/eureka/
-      # 需认证版（规则：http://user:password@host:port/eureka/）
-      #defaultZone: http://eureka_admin:eureka_admin_123@peer1:8761/eureka/,http://eureka_admin:eureka_admin_123@peer2:8762/eureka/,http://eureka_admin:eureka_admin_123@peer3:8763/eureka/
- 
-  
 
