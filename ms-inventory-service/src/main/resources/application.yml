@@ -1,0 +1,38 @@
+# 服务器配置
+server:
+  # 指定该Eureka实例的端口
+  port: 8880
+  servlet:
+    context-path: /
+
+# eureka客户端（即服务提供者）,集群
+spring: 
+  # 数据源配置  (可放到 nacos/spring cloud config配置中心)
+  datasource: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.2.6:3306/ms_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    username: db_ebay_dev
+    password: db_ebay_devpwd
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: ${spring.application.name}-fescar-service-group
+  # Spring data JPA配置
+  jpa:
+    hibernate:
+      naming:
+        # 解决列名都配置正确，但是还是出现SQL Error: 1054, SQLState: 42S22 Unknown column in 'field list' error的问题
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl 
+    properties:
+      hibernate:
+        hbm2ddl:
+          #auto: none
+          auto: update
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true            
+
+# 日志配置
+logging:
+  config: classpath:log-config/logback-${spring.profiles.active}.xml
+  
+

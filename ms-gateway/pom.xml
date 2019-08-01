@@ -40,10 +40,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-tomcat</artifactId>
               </exclusion>
-              <exclusion>
+              <!-- Greenwich.SR2 不能排除 -->
+              <!-- <exclusion>
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-webmvc</artifactId>
-              </exclusion>
+              </exclusion> -->
           </exclusions>
       </dependency>
       <!-- swagger --> 

@@ -25,4 +25,8 @@ spring:
           uri: http://192.168.2.109:9080/
           predicates:
             - Path= /portal/**  
+logging: 
+  pattern:
+    level: error
+                
                  

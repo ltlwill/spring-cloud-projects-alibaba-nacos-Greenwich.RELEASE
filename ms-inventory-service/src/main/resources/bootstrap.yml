@@ -1,0 +1,36 @@
+# nacos 固定值配置
+nacos-server-address: 127.0.0.1:8848
+nacos-namespace-dev: 327695a5-9f75-405d-99bf-e46b51f6be0f
+nacos-namespace-test: c741ea3c-c048-47a4-a395-3d967d9b51ed
+nacos-namespace-pro: 4fdf5ea7-a937-4ffd-9550-25835f0814a0
+
+# spring
+spring:
+  application:
+    # 对应 ms-config-server中所获取的远程配置文件的{application}
+    #name: product-service,common
+    name: inventory-service
+  profiles:
+    active: dev
+  # alibaba nacos
+  cloud: 
+    nacos: 
+      discovery: 
+        server-addr: ${nacos-server-address}
+        namespace: ${nacos-namespace-${spring.profiles.active}}
+      config: 
+        server-addr: ${nacos-server-address}
+        file-extension: yml
+        namespace: ${nacos-namespace-${spring.profiles.active}}
+        # 共享配置 方式一
+        shared-dataids: common-config.yml,rabbitmq-config.yml
+        refreshable-dataids: common-config.yml,rabbitmq-config.yml
+        # 共享配置 方式二
+        ext-config:
+          - data-id: common-config.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: rabbitmq-config.yml
+            group: DEFAULT_GROUP
+            refresh: true 
+

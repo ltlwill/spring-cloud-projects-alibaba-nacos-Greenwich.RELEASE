@@ -21,16 +21,13 @@ spring:
         file-extension: yml
         namespace: ${nacos-namespace-${spring.profiles.active}}
         # 共享配置 方式一
-        shared-dataids: common-config.yml,rabbitmq-config.yml
-        refreshable-dataids: common-config.yml,rabbitmq-config.yml
+        shared-dataids: common-config.yml
+        refreshable-dataids: common-config.yml
         # 共享配置 方式二
         ext-config:
           - data-id: common-config.yml
             group: DEFAULT_GROUP
             refresh: true
-          - data-id: rabbitmq-config.yml
-            group: DEFAULT_GROUP
-            refresh: true 
    
    
    

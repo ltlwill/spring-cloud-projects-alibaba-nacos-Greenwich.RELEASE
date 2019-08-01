@@ -9,5 +9,13 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"      
-commonConfig: this is a common config aa xx
+        include: "*"
+zuul:
+  host:
+    connect-timeout-millis: 30000  # 30秒超时
+    connection-request-timeout-millis: 30000
+    socket-timeout-millis: 30000        
+ribbon: 
+  ReadTimeout: 30000
+  ConnectTimeout: 30000             
+commonConfig: this is a common config tt

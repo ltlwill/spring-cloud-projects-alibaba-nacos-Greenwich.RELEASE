@@ -31,6 +31,7 @@
         <lombok.version>1.18.8</lombok.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <!-- <spring-boot-devtools.version>2.1.6.RELEASE</spring-boot-devtools.version> -->
+        <spring-cloud-alibaba-seata.version>0.9.0.RELEASE</spring-cloud-alibaba-seata.version>
     </properties>
 
     <!-- spring cloud base -->
@@ -148,6 +149,13 @@
            <groupId>org.springframework.cloud</groupId>
            <artifactId>spring-cloud-starter-oauth2</artifactId>
        </dependency> -->
+       
+       <!-- alibaba seata distributed transaction -->
+        <!-- <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-alibaba-seata</artifactId>
+		    <version>${spring-cloud-alibaba-seata.version}</version>
+		</dependency> -->
        
         <!-- 热部署 -->       
         <dependency>
