@@ -24,4 +24,19 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"  
+        include: "*"
+hystrix: 
+  command: 
+    # hystrix 默认超时配置
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+    # 指定具体类名、具体方法        
+    "MyFeignClient#sayWhyByFeign()": 
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 9000        
+        

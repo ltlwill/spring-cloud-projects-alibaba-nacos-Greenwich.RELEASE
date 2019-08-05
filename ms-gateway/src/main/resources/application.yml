@@ -7,7 +7,7 @@ server:
 spring: 
   # spring cloud 配置(yml配置方式的路由实现，还可以有代码方式实现)
   cloud:
-    gateway:
+    gateway: 
       discovery:
         locator:
           enabled: true # 为true便开启通过服务中心的自动根据 serviceId 创建路由的功能
