@@ -17,7 +17,7 @@
   <parent>
       <groupId>com.efe.ms</groupId>
       <artifactId>ms-parent</artifactId>
-      <version>Greenwich.RELEASE</version>
+      <version>Greenwich-nacos-0.9.RELEASE</version>
   </parent>
 
   <dependencies>

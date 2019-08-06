@@ -4,7 +4,7 @@
 
     <groupId>com.efe.ms</groupId>
     <artifactId>ms-parent</artifactId>
-    <version>Greenwich.RELEASE</version>
+    <version>Greenwich-nacos-0.9.RELEASE</version>
     <packaging>pom</packaging>
 
     <name>ms-parent</name>
@@ -25,7 +25,7 @@
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <spring-cloud-starter-alibaba-nacos.version>0.9.0.RELEASE</spring-cloud-starter-alibaba-nacos.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version>
         <junit.version>4.12</junit.version>
         <swagger.version>2.9.2</swagger.version>
         <lombok.version>1.18.8</lombok.version>
@@ -59,14 +59,14 @@
                 </configuration>
             </plugin>
             <!-- 打包时跳过test插件，不运行test测试用例 -->
-            <!-- <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <skipTests>true</skipTests>
                 </configuration>
-            </plugin> -->
+            </plugin>
         </plugins>
     </build>
 
