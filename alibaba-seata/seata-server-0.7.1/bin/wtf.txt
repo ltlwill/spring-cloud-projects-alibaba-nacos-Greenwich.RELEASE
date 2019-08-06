@@ -1,0 +1,7 @@
+seata 0.7.1 server 没成功运行过
+1.以 file 模式运行  能成功运行
+	但是运行期间总是报：io.netty.handler.codec.TooLongFrameException: Adjusted frame length exceeds 8388608: 2415944960 - discarded
+2.以 db 模式运行 不能启动成功，不管怎么配置都报： unknow dbtype:null
+
+
+		

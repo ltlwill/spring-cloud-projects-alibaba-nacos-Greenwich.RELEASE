@@ -1,0 +1,1 @@
+seata-server.bat -p 8091 -h 127.0.0.1 -m db > startup-db.log 
