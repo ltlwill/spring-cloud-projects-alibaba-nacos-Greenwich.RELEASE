@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.efe.ms.serviceconsumer.domain.Combo;
 import com.efe.ms.serviceconsumer.domain.Product;
-import com.efe.ms.serviceconsumer.feignclients.ProductServiceFeignClient;
+import com.efe.ms.serviceconsumer.feign.ProductServiceFeignClient;
 import com.efe.ms.serviceconsumer.util.MapUtil;
 import com.efe.ms.serviceconsumer.vo.Pagination;
 

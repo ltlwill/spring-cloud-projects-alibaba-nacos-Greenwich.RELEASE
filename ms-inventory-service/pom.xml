@@ -24,12 +24,13 @@
   </parent>
 
   <dependencies>
-      <!-- alibaba seata distributed transaction -->
-      <dependency>
+      <!-- alibaba seata distributed transaction（0.7.1，各种各样的问题，暂时不是使） -->
+      <!-- <dependency>
 	    <groupId>org.springframework.cloud</groupId>
 	    <artifactId>spring-cloud-alibaba-seata</artifactId>
 	    <version>${spring-cloud-alibaba-seata.version}</version>
-	  </dependency>
+	  </dependency> -->
+	  
       <!-- spring data jpa -->
       <dependency>
           <groupId>org.springframework.boot</groupId>

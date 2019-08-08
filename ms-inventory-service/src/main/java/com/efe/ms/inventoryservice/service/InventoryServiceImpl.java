@@ -3,6 +3,7 @@ package com.efe.ms.inventoryservice.service;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.efe.ms.inventoryservice.dao.InventoryRepository;
 import com.efe.ms.inventoryservice.domain.Inventory;
@@ -19,6 +20,7 @@ public class InventoryServiceImpl implements InventoryService {
 	private InventoryRepository inventoryRepository;
 
 	@Override
+	@Transactional(rollbackFor = Exception.class)
 	public void deduct(String sku, Integer count) {
 		if(StringUtils.isBlank(sku) || count <= 0){
 			throw new IllegalArgumentException("扣减库存失败");

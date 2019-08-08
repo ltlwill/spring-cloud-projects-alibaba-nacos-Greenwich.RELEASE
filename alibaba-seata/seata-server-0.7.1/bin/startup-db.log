@@ -1,118 +1,46 @@
-18:00:37,850 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
-18:00:37,850 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
-18:00:37,850 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/conf/logback.xml]
-18:00:37,851 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
-18:00:37,851 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/lib/seata-server-0.7.1.jar!/logback.xml]
-18:00:37,851 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/conf/logback.xml]
-18:00:37,907 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
-18:00:37,911 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/conf/logback.xml] 
-18:00:37,911 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 1 minutes
-18:00:37,914 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
-18:00:37,917 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [stdout]
-18:00:37,968 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
-18:00:37,970 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [seata-default]
-18:00:37,977 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - Archive files will be limited to [2048 MB] each.
-18:00:37,979 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - No compression will be used
-18:00:37,980 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - Will use the pattern C:/Users/EFE050/logs/seata/seata-server.log.%d{yyyy-MM-dd}.%i for the active file
-18:00:37,982 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5034c75a - The date pattern is 'yyyy-MM-dd' from file name pattern 'C:/Users/EFE050/logs/seata/seata-server.log.%d{yyyy-MM-dd}.%i'.
-18:00:37,982 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5034c75a - Roll-over at midnight.
-18:00:37,985 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5034c75a - Setting initial period to Tue Aug 06 17:27:27 CST 2019
-18:00:37,987 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - Cleaning on start up
-18:00:37,988 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - first clean up after appender initialization
-18:00:37,988 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - Multiple periods, i.e. 32 periods, seem to have elapsed. This is expected at application start.
-18:00:37,988 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
-18:00:37,990 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[seata-default] - Active log file name: C:\Users\EFE050/logs/seata/seata-server.log
-18:00:37,990 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[seata-default] - File property is set to [C:\Users\EFE050/logs/seata/seata-server.log]
-18:00:37,992 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [io.seata.server.store.file.FileTransactionStoreManager] to false
-18:00:37,992 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - io.seata.server.store.file.FileTransactionStoreManager level set to INFO
-18:00:37,992 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [seata-default] to Logger[io.seata.server.store.file.FileTransactionStoreManager]
-18:00:37,992 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
-18:00:37,992 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [seata-default] to Logger[ROOT]
-18:00:37,993 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [stdout] to Logger[ROOT]
-18:00:37,993 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
-18:00:37,993 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@396a51ab - Registering current configuration as safe fallback point
+08:51:37,991 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+08:51:37,992 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.groovy]
+08:51:37,992 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/conf/logback.xml]
+08:51:37,993 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs multiple times on the classpath.
+08:51:37,993 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [jar:file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/lib/seata-server-0.7.1.jar!/logback.xml]
+08:51:37,993 |-WARN in ch.qos.logback.classic.LoggerContext[default] - Resource [logback.xml] occurs at [file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/conf/logback.xml]
+08:51:38,047 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - debug attribute not set
+08:51:38,052 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Will scan for changes in [file:/E:/work/eclipseWorkSpace8/alibaba-seata/seata-server-0.7.1/conf/logback.xml] 
+08:51:38,052 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - Setting ReconfigureOnChangeTask scanning period to 1 minutes
+08:51:38,055 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+08:51:38,057 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [stdout]
+08:51:38,104 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+08:51:38,107 |-INFO in ch.qos.logback.core.joran.action.AppenderAction - Naming appender as [seata-default]
+08:51:38,114 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - Archive files will be limited to [2048 MB] each.
+08:51:38,116 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - No compression will be used
+08:51:38,117 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - Will use the pattern C:/Users/EFE050/logs/seata/seata-server.log.%d{yyyy-MM-dd}.%i for the active file
+08:51:38,119 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5034c75a - The date pattern is 'yyyy-MM-dd' from file name pattern 'C:/Users/EFE050/logs/seata/seata-server.log.%d{yyyy-MM-dd}.%i'.
+08:51:38,119 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5034c75a - Roll-over at midnight.
+08:51:38,122 |-INFO in ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP@5034c75a - Setting initial period to Tue Aug 06 18:02:04 CST 2019
+08:51:38,124 |-INFO in c.q.l.core.rolling.SizeAndTimeBasedRollingPolicy@1374677625 - Cleaning on start up
+08:51:38,124 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - first clean up after appender initialization
+08:51:38,125 |-INFO in c.q.l.core.rolling.helper.TimeBasedArchiveRemover - Multiple periods, i.e. 32 periods, seem to have elapsed. This is expected at application start.
+08:51:38,125 |-INFO in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+08:51:38,127 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[seata-default] - Active log file name: C:\Users\EFE050/logs/seata/seata-server.log
+08:51:38,127 |-INFO in ch.qos.logback.core.rolling.RollingFileAppender[seata-default] - File property is set to [C:\Users\EFE050/logs/seata/seata-server.log]
+08:51:38,128 |-INFO in ch.qos.logback.classic.joran.action.LoggerAction - Setting additivity of logger [io.seata.server.store.file.FileTransactionStoreManager] to false
+08:51:38,128 |-INFO in ch.qos.logback.classic.joran.action.LevelAction - io.seata.server.store.file.FileTransactionStoreManager level set to INFO
+08:51:38,128 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [seata-default] to Logger[io.seata.server.store.file.FileTransactionStoreManager]
+08:51:38,129 |-INFO in ch.qos.logback.classic.joran.action.RootLoggerAction - Setting level of ROOT logger to INFO
+08:51:38,129 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [seata-default] to Logger[ROOT]
+08:51:38,129 |-INFO in ch.qos.logback.core.joran.action.AppenderRefAction - Attaching appender named [stdout] to Logger[ROOT]
+08:51:38,129 |-INFO in ch.qos.logback.classic.joran.action.ConfigurationAction - End of configuration.
+08:51:38,130 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@396a51ab - Registering current configuration as safe fallback point
 
-2019-08-06 18:00:38.071 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load ConfigurationProvider[Nacos] extension by class[io.seata.config.nacos.NacosConfigurationProvider]
-2019-08-06 18:00:38.748 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load DataSourceGenerator[null] extension by class[io.seata.server.store.db.DruidDataSourceGenerator]
-2019-08-06 18:00:39.171 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load LogStore[DB] extension by class[io.seata.core.store.db.LogStoreDataBaseDAO]
-2019-08-06 18:00:39.172 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load TransactionStoreManager[DB] extension by class[io.seata.server.store.db.DatabaseTransactionStoreManager]
-2019-08-06 18:00:39.172 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load SessionManager[DB] extension by class[io.seata.server.session.db.DataBaseSessionManager]
-2019-08-06 18:00:41.923 INFO [main]io.seata.core.rpc.netty.AbstractRpcRemotingServer.start:179 -Server started ... 
-2019-08-06 18:00:41.935 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load RegistryProvider[Nacos] extension by class[io.seata.discovery.registry.nacos.NacosRegistryProvider]
-2019-08-06 18:00:42.325 INFO [AsyncCommitting_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-2} inited
-2019-08-06 18:00:42.325 INFO [RetryRollbacking_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-4} inited
-2019-08-06 18:00:42.326 INFO [RetryCommitting_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-1} inited
-2019-08-06 18:00:42.361 INFO [TxTimeoutCheck_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-3} inited
-2019-08-06 18:02:04.051 INFO [NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.RpcServer.exceptionCaught:334 -channel exx:Adjusted frame length exceeds 8388608: 2415945472 - discarded,channel:[id: 0x2c0b68c8, L:/127.0.0.1:8091 - R:/127.0.0.1:65506]
-2019-08-06 18:02:04.067 ERROR[NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.AbstractRpcRemoting.exceptionCaught:424 -0318
-io.netty.handler.codec.TooLongFrameException: Adjusted frame length exceeds 8388608: 2415945472 - discarded
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.fail(LengthFieldBasedFrameDecoder.java:522)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.failIfNecessary(LengthFieldBasedFrameDecoder.java:500)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.exceededFrameLength(LengthFieldBasedFrameDecoder.java:387)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.decode(LengthFieldBasedFrameDecoder.java:430)
-	at io.seata.core.rpc.netty.v1.ProtocolV1Decoder.decode(ProtocolV1Decoder.java:75)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.decode(LengthFieldBasedFrameDecoder.java:343)
-	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
-	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Unknown Source)
-2019-08-06 18:02:04.068 INFO [NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.AbstractRpcRemotingServer.destroyChannel:212 -will destroy channel:[id: 0x2c0b68c8, L:/127.0.0.1:8091 - R:/127.0.0.1:65506],address:127.0.0.1:65506
-2019-08-06 18:02:04.069 INFO [NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.AbstractRpcRemoting.close:445 -ChannelHandlerContext(RpcServer#0, [id: 0x2c0b68c8, L:/127.0.0.1:8091 - R:/127.0.0.1:65506]) will closed
-2019-08-06 18:02:04.070 INFO [NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.AbstractRpcRemoting.close:445 -ChannelHandlerContext(RpcServer#0, [id: 0x2c0b68c8, L:/127.0.0.1:8091 ! R:/127.0.0.1:65506]) will closed
-2019-08-06 18:02:04.075 INFO [NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.RpcServer.handleDisconnect:286 -127.0.0.1:65506 to server channel inactive.
-2019-08-06 18:02:04.076 INFO [NettyServerNIOWorker_2_8]io.seata.core.rpc.netty.RpcServer.handleDisconnect:295 -remove unused channel:[id: 0x2c0b68c8, L:/127.0.0.1:8091 ! R:/127.0.0.1:65506]
-2019-08-06 18:02:04.471 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.RpcServer.exceptionCaught:334 -channel exx:Adjusted frame length exceeds 8388608: 2415944960 - discarded,channel:[id: 0xf9535699, L:/127.0.0.1:8091 - R:/127.0.0.1:65507]
-2019-08-06 18:02:04.471 ERROR[NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.AbstractRpcRemoting.exceptionCaught:424 -0318
-io.netty.handler.codec.TooLongFrameException: Adjusted frame length exceeds 8388608: 2415944960 - discarded
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.fail(LengthFieldBasedFrameDecoder.java:522)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.failIfNecessary(LengthFieldBasedFrameDecoder.java:500)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.exceededFrameLength(LengthFieldBasedFrameDecoder.java:387)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.decode(LengthFieldBasedFrameDecoder.java:430)
-	at io.seata.core.rpc.netty.v1.ProtocolV1Decoder.decode(ProtocolV1Decoder.java:75)
-	at io.netty.handler.codec.LengthFieldBasedFrameDecoder.decode(LengthFieldBasedFrameDecoder.java:343)
-	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:489)
-	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:428)
-	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:265)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
-	at io.netty.handler.timeout.IdleStateHandler.channelRead(IdleStateHandler.java:286)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
-	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:645)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:580)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:497)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:459)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Unknown Source)
-2019-08-06 18:02:04.471 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.AbstractRpcRemotingServer.destroyChannel:212 -will destroy channel:[id: 0xf9535699, L:/127.0.0.1:8091 - R:/127.0.0.1:65507],address:127.0.0.1:65507
-2019-08-06 18:02:04.471 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.AbstractRpcRemoting.close:445 -ChannelHandlerContext(RpcServer#0, [id: 0xf9535699, L:/127.0.0.1:8091 - R:/127.0.0.1:65507]) will closed
-2019-08-06 18:02:04.472 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.AbstractRpcRemoting.close:445 -ChannelHandlerContext(RpcServer#0, [id: 0xf9535699, L:/127.0.0.1:8091 ! R:/127.0.0.1:65507]) will closed
-2019-08-06 18:02:04.472 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.RpcServer.handleDisconnect:286 -127.0.0.1:65507 to server channel inactive.
-2019-08-06 18:02:04.472 INFO [NettyServerNIOWorker_1_8]io.seata.core.rpc.netty.RpcServer.handleDisconnect:295 -remove unused channel:[id: 0xf9535699, L:/127.0.0.1:8091 ! R:/127.0.0.1:65507]
+2019-08-07 08:51:38.207 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load ConfigurationProvider[Nacos] extension by class[io.seata.config.nacos.NacosConfigurationProvider]
+2019-08-07 08:51:38.890 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load DataSourceGenerator[null] extension by class[io.seata.server.store.db.DruidDataSourceGenerator]
+2019-08-07 08:51:39.312 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load LogStore[DB] extension by class[io.seata.core.store.db.LogStoreDataBaseDAO]
+2019-08-07 08:51:39.313 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load TransactionStoreManager[DB] extension by class[io.seata.server.store.db.DatabaseTransactionStoreManager]
+2019-08-07 08:51:39.313 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load SessionManager[DB] extension by class[io.seata.server.session.db.DataBaseSessionManager]
+2019-08-07 08:51:41.629 INFO [main]io.seata.core.rpc.netty.AbstractRpcRemotingServer.start:179 -Server started ... 
+2019-08-07 08:51:41.702 INFO [main]io.seata.common.loader.EnhancedServiceLoader.loadFile:237 -load RegistryProvider[Nacos] extension by class[io.seata.discovery.registry.nacos.NacosRegistryProvider]
+2019-08-07 08:51:42.387 INFO [RetryRollbacking_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-1} inited
+2019-08-07 08:51:42.439 INFO [TxTimeoutCheck_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-2} inited
+2019-08-07 08:51:42.440 INFO [AsyncCommitting_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-4} inited
+2019-08-07 08:51:42.552 INFO [RetryCommitting_1]com.alibaba.druid.pool.DruidDataSource.init:947 -{dataSource-3} inited
 终止批处理操作吗(Y/N)? 

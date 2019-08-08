@@ -8,15 +8,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.alibaba.fescar.rm.datasource.DataSourceProxy;
+//import com.alibaba.fescar.rm.datasource.DataSourceProxy;
 import com.zaxxer.hikari.HikariDataSource;
 
 /**
- * 数据库配置()
+ * 数据库配置(使用alibaba seata 实现分布式事务)
  * @author TianLong Liu
  * @date 2019年7月30日 下午4:25:36
  */
-@Configuration
+//@Configuration
 //@ConditionalOnClass(HikariDataSource.class)
 public class DataSourceConfig {
 	
@@ -40,11 +40,11 @@ public class DataSourceConfig {
 	}*/
 	
 	
-	@Bean
-	@ConfigurationProperties(prefix="spring.datasource")
-	public DruidDataSource druidDataSource(){
-		return new DruidDataSource();
-	}
+//	@Bean
+//	@ConfigurationProperties(prefix="spring.datasource")
+//	public DruidDataSource druidDataSource(){
+//		return new DruidDataSource();
+//	}
 	
 	/**
      * 需要将 DataSourceProxy 设置为主数据源，否则seata事务无法回滚
@@ -52,11 +52,11 @@ public class DataSourceConfig {
      * @param druidDataSource The DruidDataSource
      * @return The default datasource
      */
-	@Bean("dataSource")
-	@Primary
-	public DataSource dataSource(DataSource dataSource){
-		return new DataSourceProxy(dataSource); 
-	}
+//	@Bean("dataSource")
+//	@Primary
+//	public DataSource dataSource(DataSource dataSource){
+//		return new DataSourceProxy(dataSource); 
+//	}
 	
 
 }

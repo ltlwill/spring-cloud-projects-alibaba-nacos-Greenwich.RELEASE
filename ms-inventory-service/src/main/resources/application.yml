@@ -1,7 +1,7 @@
 # 服务器配置
 server:
   # 指定该Eureka实例的端口
-  port: 8880
+  port: 8810
   servlet:
     context-path: /
 
@@ -10,7 +10,7 @@ spring:
   # 数据源配置  (可放到 nacos/spring cloud config配置中心)
   datasource: 
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.2.6:3306/ms_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+    url: jdbc:mysql://192.168.2.6:3306/ms_inventory_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
     username: db_ebay_dev
     password: db_ebay_devpwd
   cloud:
