@@ -18,6 +18,8 @@ alibaba-nacos1.1.0/nacos/data/derby-data
  
 # bin/
 gen/
+bin/logs/
+logs/
 local.properties
  
 .DS_Store
