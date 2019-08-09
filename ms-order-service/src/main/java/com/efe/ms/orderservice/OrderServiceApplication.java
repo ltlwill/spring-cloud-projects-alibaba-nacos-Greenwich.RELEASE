@@ -7,6 +7,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
+
 /**
  * 订单服务
  * @author EFE050
@@ -14,6 +16,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @SpringCloudApplication
 @EnableFeignClients
+@EnableDistributedTransaction // 开启tx-lcn分布式事务控制
 public class OrderServiceApplication 
 {
     public static void main( String[] args )

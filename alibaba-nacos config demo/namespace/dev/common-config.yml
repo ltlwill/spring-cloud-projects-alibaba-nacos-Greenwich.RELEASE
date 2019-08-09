@@ -9,27 +9,26 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"  
+        include: "*"
 zuul:
   host:
-    connect-timeout-millis: 30000  # 30秒超时
-    connection-request-timeout-millis: 30000
-    socket-timeout-millis: 30000        
+    connect-timeout-millis: 180000  # 3 min
+    connection-request-timeout-millis: 180000
+    socket-timeout-millis: 180000        
 ribbon: 
-  ReadTimeout: 30000
-  ConnectTimeout: 30000		
-hystrix: 
-  command: 
-    # hystrix 默认超时配置
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 30000
-    # 指定具体类名、具体方法        
-    "MyFeignClient#sayWhyByFeign()": 
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 9000   
-commonConfig: this is a common config aa xx
+  ReadTimeout: 180000
+  ConnectTimeout: 180000 
+  # config for tx-lcn
+  MaxAutoRetriesNextServer: 0
+          
+# tx-lcn distributed transaction client config  
+tx-lcn: 
+  client: 
+    # Multiple separated by ",",such as 127.0.0.1:8070,127.0.0.2:8070
+    manager-address: 127.0.0.1:8070
+  ribbon: 
+    loadbalancer: 
+      dtx: 
+        enabled: true
+        
+commonConfig: this is a common config tt

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.efe.ms.inventoryservice.dao.InventoryRepository;
 import com.efe.ms.inventoryservice.domain.Inventory;
 
@@ -20,6 +21,7 @@ public class InventoryServiceImpl implements InventoryService {
 	private InventoryRepository inventoryRepository;
 
 	@Override
+	@LcnTransaction // 分布式事务注解
 	@Transactional(rollbackFor = Exception.class)
 	public void deduct(String sku, Integer count) {
 		if(StringUtils.isBlank(sku) || count <= 0){

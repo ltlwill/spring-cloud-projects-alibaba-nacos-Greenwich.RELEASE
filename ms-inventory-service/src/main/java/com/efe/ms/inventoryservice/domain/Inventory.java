@@ -24,7 +24,7 @@ import org.hibernate.annotations.DynamicUpdate;
 public class Inventory extends BusinessEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String id;
+	private Long id;
 	// 产品编码
 //	@Column(name="sku")
 	private String sku;

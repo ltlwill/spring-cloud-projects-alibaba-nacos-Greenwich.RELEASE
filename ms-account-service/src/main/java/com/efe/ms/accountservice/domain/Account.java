@@ -27,7 +27,7 @@ import org.hibernate.annotations.DynamicUpdate;
 public class Account extends BusinessEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private String id;
+	private Long id;
 	// 产品编码
 	@Column(name="user_id")
 	private String userId;

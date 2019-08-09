@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.efe.ms.orderservice.dao.OrderRepository;
 import com.efe.ms.orderservice.domain.Order;
 import com.efe.ms.orderservice.feign.AccountServiceFeiClient;
@@ -29,6 +30,7 @@ public class OrderServiceImpl implements OrderService {
 	private AccountServiceFeiClient accountServiceFeiClient;
 
 	@Override
+	@LcnTransaction // 分布式事务注解
 	@Transactional(rollbackFor = Exception.class)
 	public void createOrder(String userId, String sku, Integer count) {
 		if(StringUtils.isBlank(userId) || StringUtils.isBlank(sku) || count == null || count <= 0){

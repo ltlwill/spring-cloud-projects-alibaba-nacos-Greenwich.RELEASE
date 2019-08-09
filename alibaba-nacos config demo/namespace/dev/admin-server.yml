@@ -1,5 +1,7 @@
 spring:
   security:
     user:
+	  # ui login user name 
       name: admin
+	  # ui login user password
       password: admin@1234

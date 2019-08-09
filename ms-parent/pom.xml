@@ -33,6 +33,7 @@
         <commons-lang3.version>3.9</commons-lang3.version>
         <!-- <spring-boot-devtools.version>2.1.6.RELEASE</spring-boot-devtools.version> -->
         <spring-cloud-alibaba-seata.version>0.9.0.RELEASE</spring-cloud-alibaba-seata.version>
+        <tx-lcn.version>5.0.2.RELEASE</tx-lcn.version>
     </properties>
 
     <!-- spring cloud base -->
@@ -151,12 +152,25 @@
            <artifactId>spring-cloud-starter-oauth2</artifactId>
        </dependency> -->
        
-       <!-- alibaba seata distributed transaction -->
+       <!-- 1. alibaba seata distributed transaction -->
         <!-- <dependency>
 		    <groupId>org.springframework.cloud</groupId>
 		    <artifactId>spring-cloud-alibaba-seata</artifactId>
 		    <version>${spring-cloud-alibaba-seata.version}</version>
 		</dependency> -->
+		
+		<!-- 2. tx-lcn distributed transaction -->
+		<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-tc</artifactId>
+			<version>${tx-lcn.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.codingapi.txlcn</groupId>
+			<artifactId>txlcn-txmsg-netty</artifactId>
+			<version>${tx-lcn.version}</version>
+		</dependency>
        
         <!-- 热部署 -->       
         <dependency>

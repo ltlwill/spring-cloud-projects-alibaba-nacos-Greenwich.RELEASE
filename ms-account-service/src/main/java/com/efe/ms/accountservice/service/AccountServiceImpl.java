@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.efe.ms.accountservice.dao.AccountRepository;
 import com.efe.ms.accountservice.domain.Account;
 
@@ -23,6 +24,7 @@ public class AccountServiceImpl implements AccountService {
 	private AccountRepository accountRepository;
 
 	@Override
+	@LcnTransaction // 分布式事务注解
 	@Transactional(rollbackFor = Exception.class)
 	public void debit(String userId, BigDecimal num) {
 		if (StringUtils.isBlank(userId) || num == null) {
@@ -34,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
 		}
 		if (account.getBalance() == null
 				|| account.getBalance().compareTo(num) == -1) {
-			throw new RuntimeException(String.format("账户余额不足，余额：%d，应扣除金额：%d",
+			throw new RuntimeException(String.format("账户余额不足，余额：%s，应扣除金额：%s",
 					account.getBalance() == null ? 0 : account.getBalance(),
 					num));
 		}

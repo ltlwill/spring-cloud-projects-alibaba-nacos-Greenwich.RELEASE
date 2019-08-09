@@ -30,5 +30,4 @@ spring:
 # 日志配置
 logging:
   config: classpath:log-config/logback-${spring.profiles.active}.xml
-  
 
