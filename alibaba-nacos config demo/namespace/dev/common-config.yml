@@ -20,6 +20,15 @@ ribbon:
   ConnectTimeout: 180000 
   # config for tx-lcn
   MaxAutoRetriesNextServer: 0
+feign:
+  # enabling the request or response GZIP compression for your Feign requests 
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response: 
+      enabled: true   
           
 # tx-lcn distributed transaction client config  
 tx-lcn: 

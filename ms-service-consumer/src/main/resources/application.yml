@@ -39,4 +39,13 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 9000        
+feign:
+  # enabling the request or response GZIP compression for your Feign requests 
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response: 
+      enabled: true   
         
