@@ -2,7 +2,9 @@
 server:
   # 指定该Eureka实例的端口
   port: 8750
-  servlet:
+  compression:
+    enabled: true
+  servlet: 
     context-path: /
 
 # eureka客户端（即服务提供者）,集群
