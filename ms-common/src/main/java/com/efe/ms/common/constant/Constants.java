@@ -11,6 +11,6 @@ public final class Constants {
 		public static final String ACCESS_TOKEN = "x-access-token";
 		public static final String TANSFER_USER_ID = "x-transfer-user-id";
 		public static final String TANSFER_USER_NAME = "x-transfer-user-name";
-		public static final String TANSFER_USER_INFO = "xtransfer-user-info";
+		public static final String TANSFER_USER_INFO = "x-transfer-user-info";
 	}
 }
