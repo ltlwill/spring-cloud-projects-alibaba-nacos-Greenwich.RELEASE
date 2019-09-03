@@ -1,7 +1,6 @@
 # 服务器配置
 server:
   port: 8731
-
 # zuul路由配置(也可以代码实现)
 zuul:
   host:

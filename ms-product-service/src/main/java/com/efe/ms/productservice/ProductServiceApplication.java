@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 import com.efe.ms.productservice.events.ProductApplicationStartingEventListener;
 
@@ -17,6 +18,7 @@ import com.efe.ms.productservice.events.ProductApplicationStartingEventListener;
  * @author Liu TianLong 2018年8月24日 上午11:42:30
  */
 @SpringCloudApplication
+@ComponentScan(basePackages="com.efe.ms") // 需要包含ms-common项目下的，否则扫描不到ms-common项目下的bean信息
 public class ProductServiceApplication {
 	public static void main(String[] args) {
 		// SpringApplication.run(ProductServiceApplication.class, args);

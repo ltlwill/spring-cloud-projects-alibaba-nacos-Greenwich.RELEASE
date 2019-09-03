@@ -51,5 +51,10 @@
           <version>${lombok.version}</version>
           <scope>provided</scope>
       </dependency>
+      <dependency>
+          <groupId>com.efe.ms</groupId>
+          <artifactId>ms-common</artifactId>
+          <version>${ms-common.version}</version>
+      </dependency>
   </dependencies>
 </project>

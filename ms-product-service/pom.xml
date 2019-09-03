@@ -11,7 +11,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-  	<!-- <maven-surefire-plugin.version>2.22.1</maven-surefire-plugin.version> -->
+  	  <!-- <start-class>com.efe.ms.productservice.ProductServiceApplication</start-class> -->
   </properties>
   
   <!-- 依赖父项目 -->
@@ -53,23 +53,50 @@
           <scope>provided</scope>
       </dependency>
       <dependency>
-	    <groupId>org.apache.commons</groupId>
-	    <artifactId>commons-lang3</artifactId>
-	    <version>${commons-lang3.version}</version>
+	      <groupId>org.apache.commons</groupId>
+	      <artifactId>commons-lang3</artifactId>
+	      <version>${commons-lang3.version}</version>
 	  </dependency>
+	  <dependency>
+          <groupId>com.efe.ms</groupId>
+          <artifactId>ms-common</artifactId>
+          <version>${ms-common.version}</version>
+      </dependency>
   </dependencies>
   
-  <!-- <build>
+  <!-- 注：因为依赖了 ms-common公共模块，目前只能在 parent项目(ms-parent)中去执行打包操作，在此项目下执行打包，则会失败（找不到依赖的ms-common.jar包） -->
+  <build>
   	<plugins>
-		打包时跳过test插件，不运行test测试用例
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>${maven-surefire-plugin.version}</version>
+		<plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
-                <skipTests>true</skipTests>
+                <!-- 没有该配置，devtools 不生效 -->
+                <fork>true</fork>
+                <addResources>true</addResources>
+                <!-- <classifier>exe</classifier> -->
+                <!-- <classifier>exec</classifier> -->
+                <!-- <mainClass>${start-class}</mainClass> -->
+                <!-- <mainClass>com.efe.ms.productservice.ProductServiceApplication</mainClass>-->
+                <!--<layout>ZIP</layout> -->
             </configuration>
+           <!--  <executions>
+            	<execution>
+            		<id>repackage</id>
+            		<goals>
+            			<goal>repackage</goal>
+            		</goals>
+            	</execution>
+            </executions> -->
         </plugin>
+        <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>${maven-surefire-plugin.version}</version>
+              <configuration>
+                  <skipTests>true</skipTests>
+              </configuration>
+          </plugin>
   	</plugins>
-  </build> -->
+  </build>
 </project>

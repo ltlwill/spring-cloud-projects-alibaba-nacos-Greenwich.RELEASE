@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+  	
   </properties>
   
    <!-- parent pom -->
@@ -36,6 +37,11 @@
           <groupId>io.springfox</groupId>
           <artifactId>springfox-swagger-ui</artifactId>
           <version>${swagger.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>com.efe.ms</groupId>
+          <artifactId>ms-common</artifactId>
+          <version>${ms-common.version}</version>
       </dependency>
   </dependencies>
 </project>

@@ -11,6 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
 import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
@@ -33,7 +34,8 @@ import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 //@EnableDiscoveryClient
 //@EnableCircuitBreaker
 
-@EnableDistributedTransaction // 开启tx-lcn分布式事务控制
+//@EnableDistributedTransaction // 开启tx-lcn分布式事务控制
+@ComponentScan(basePackages="com.efe.ms") // 需要包含ms-common项目下的，否则扫描不到ms-common项目下的bean信息
 public class ServiceConsumerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceConsumerApplication.class, args);
