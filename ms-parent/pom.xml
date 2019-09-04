@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.1.7.RELEASE</version>
     </parent>
     
     <!-- 如果不配置 modules,则在父pom中执行打包时，不会有项目触发打包操作 -->
