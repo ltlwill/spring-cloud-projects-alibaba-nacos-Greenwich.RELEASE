@@ -4,7 +4,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.fastjson.JSON;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.efe.ms.common.domain.UserInfo;
+import com.efe.ms.common.util.UserInfoUtil;
 import com.efe.ms.zuulgateway.utils.JWTUtil;
 
 /**
@@ -18,6 +21,8 @@ public class IndexController {
 	
 	@RequestMapping("/index")
 	public String index(){
+		UserInfo user = UserInfoUtil.getUserInfo();
+		System.out.println("user info=" + JSON.toJSONString(user)); 
 		return "hello zuul.";
 	}
 	

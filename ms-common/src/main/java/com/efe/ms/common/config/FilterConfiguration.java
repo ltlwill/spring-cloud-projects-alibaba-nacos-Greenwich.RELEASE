@@ -14,11 +14,15 @@ import com.efe.ms.common.filter.WebGlobalFilter;
 
 @Configuration
 public class FilterConfiguration {
+	
+	private static final int DEFAULT_FILTER_ORDER = 1;
+	
 	@Bean
     public FilterRegistrationBean<WebGlobalFilter> filterRegistrationBean(){
         FilterRegistrationBean<WebGlobalFilter> bean = new FilterRegistrationBean<WebGlobalFilter>();
         bean.setFilter(new WebGlobalFilter());
         bean.addUrlPatterns("/*"); // 使用"/**"的方式无效，匹配不了
+        bean.setOrder(DEFAULT_FILTER_ORDER);
         return bean;
     }
 }

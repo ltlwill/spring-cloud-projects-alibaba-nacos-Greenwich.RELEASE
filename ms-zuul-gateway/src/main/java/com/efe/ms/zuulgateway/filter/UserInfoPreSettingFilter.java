@@ -2,6 +2,7 @@ package com.efe.ms.zuulgateway.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
 import com.efe.ms.common.constant.Constants;
@@ -16,6 +17,7 @@ import com.netflix.zuul.exception.ZuulException;
  * @author TianLong Liu
  * @date 2019年8月30日 下午4:52:36
  */
+@Component
 public class UserInfoPreSettingFilter extends ZuulFilter {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserInfoPreSettingFilter.class);
@@ -27,7 +29,7 @@ public class UserInfoPreSettingFilter extends ZuulFilter {
 
 	@Override
 	public Object run() throws ZuulException {
-		constructCurrentUserInfo();
+		setTransferUserInfo();
 		return null;
 	}
 
@@ -41,19 +43,21 @@ public class UserInfoPreSettingFilter extends ZuulFilter {
 		return 0;
 	}
 	
-	private void constructCurrentUserInfo(){
+	private void setTransferUserInfo(){
+		logger.error("UserInfoPreSettingFilter setTransferUserInfo..."); 
 		try{
 			RequestContext context = RequestContext.getCurrentContext();
-//			HttpServletRequest request = context.getRequest();
-//			String token = request.getHeader(Constants.Headers.ACCESS_TOKEN);
-//			String userId = request.getHeader(Constants.Headers.TANSFER_USER_ID);
+			/*HttpServletRequest request = context.getRequest();
+			String token = request.getHeader(Constants.Headers.ACCESS_TOKEN);
+			String userId = request.getHeader(Constants.Headers.TANSFER_USER_ID);
 			UserInfo user = new UserInfo();
 			user.setId("10001");
 			user.setName("test");
-			UserInfoUtil.setUserInfo(user);
-			context.addZuulRequestHeader(Constants.Headers.TANSFER_USER_INFO, JSON.toJSONString(user)); 
+			UserInfoUtil.setUserInfo(user);*/
+			UserInfo user = UserInfoUtil.getUserInfo();
+			context.addZuulRequestHeader(Constants.Headers.TANSFER_USER_INFO, user == null ? null : JSON.toJSONString(user)); 
 		}catch(Exception e){
-			logger.error("ZullGatewayInterceptor 设置传递user信息失败",e); 
+			logger.error("UserInfoPreSettingFilter 设置传递user信息失败",e); 
 		}
 		
 	}
