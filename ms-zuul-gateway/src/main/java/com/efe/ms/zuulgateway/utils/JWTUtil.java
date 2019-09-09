@@ -57,13 +57,13 @@ public final class JWTUtil {
 	 * @return
 	 * @throws JWTVerificationException
 	 */
-	public static DecodedJWT verifyToken(String token) throws JWTVerificationException{
+	public static DecodedJWT verifyToken(String userId,String token) throws JWTVerificationException{
 		try {
 		    Algorithm algorithm = Algorithm.HMAC256(PUBLIC_SECRET);
 		    JWTVerifier verifier = JWT.require(algorithm)
 		    		.withIssuer(ISSUSER)
-//		    		.withJWTId(jwtId)
-		    		.build(); //Reusable verifier instance
+		    		.withJWTId(userId)
+		    		.build();
 		    return verifier.verify(token);
 		} catch (JWTVerificationException e){
 		    throw e;

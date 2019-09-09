@@ -30,9 +30,9 @@ public class IndexController {
 	}
 	
 	@RequestMapping("verifyToken")
-	public boolean verifyToken(String token){
+	public boolean verifyToken(String userId,String token){
 		if(StringUtils.isBlank(token)) return false;
-		DecodedJWT jwt = JWTUtil.verifyToken(token);
+		DecodedJWT jwt = JWTUtil.verifyToken(userId,token);
 		return jwt != null;
 	}
 
