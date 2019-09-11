@@ -50,7 +50,7 @@ public class WebGlobalFilter implements Filter {
 		logger.info("---WebGlobalFilter.setTransferUserInfo---");
 		try{
 			HttpServletRequest httpRequest = (HttpServletRequest)request;
-			String userInfoStr = httpRequest.getHeader(Constants.Headers.TANSFER_USER_INFO);
+			String userInfoStr = httpRequest.getHeader(Constants.Headers.LOGIN_USER_INFO);
 			if(StringUtils.isNotBlank(userInfoStr)){
 				UserInfo userInfo = JSON.parseObject(userInfoStr, UserInfo.class);
 				UserInfoUtil.setUserInfo(userInfo);

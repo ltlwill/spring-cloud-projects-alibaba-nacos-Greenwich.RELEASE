@@ -55,7 +55,7 @@ public class UserInfoPreSettingFilter extends ZuulFilter {
 			user.setName("test");
 			UserInfoUtil.setUserInfo(user);*/
 			UserInfo user = UserInfoUtil.getUserInfo();
-			context.addZuulRequestHeader(Constants.Headers.TANSFER_USER_INFO, user == null ? null : JSON.toJSONString(user)); 
+			context.addZuulRequestHeader(Constants.Headers.LOGIN_USER_INFO, user == null ? null : JSON.toJSONString(user)); 
 		}catch(Exception e){
 			logger.error("UserInfoPreSettingFilter 设置传递user信息失败",e); 
 		}

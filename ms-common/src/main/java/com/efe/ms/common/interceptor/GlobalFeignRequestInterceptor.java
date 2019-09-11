@@ -31,7 +31,7 @@ public class GlobalFeignRequestInterceptor implements RequestInterceptor {
 		try {
 			UserInfo userInfo = UserInfoUtil.getUserInfo();
 			if (userInfo != null) {
-				template.header(Constants.Headers.TANSFER_USER_INFO,
+				template.header(Constants.Headers.LOGIN_USER_INFO,
 						JSON.toJSONString(userInfo));
 			}
 		} catch (Exception e) {

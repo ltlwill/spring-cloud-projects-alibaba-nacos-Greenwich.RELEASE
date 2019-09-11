@@ -3,6 +3,7 @@ server:
   port: 8731
   compression:
     enabled: true
+    
 # zuul路由配置(也可以代码实现)
 zuul: 
   host:

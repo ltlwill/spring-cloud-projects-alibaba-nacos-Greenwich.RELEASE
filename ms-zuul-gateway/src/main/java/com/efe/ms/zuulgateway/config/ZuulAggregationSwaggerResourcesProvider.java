@@ -62,7 +62,7 @@ public class ZuulAggregationSwaggerResourcesProvider implements
 		resource.setName(name);
 		resource.setLocation(location);
 		resource.setSwaggerVersion(SWAGGER_VERSION);
-		return resource;
+		return resource; 
 	}
 
 }
